@@ -1,36 +1,23 @@
-# Django Tutorial Polls App
+# Django Tutorial Polls App - Take-home Task
 
-This repository contains the complete code for the [Django](https://www.djangoproject.com/) project's [tutorial](https://docs.djangoproject.com/en/2.1/intro/tutorial01/) `polls` app. The code should mirror the code you've written at the end of [Part 7](https://docs.djangoproject.com/en/2.1/intro/tutorial07/). 
+## Infrastructure Tasks
+1. In your local machine, deploy this Django app on Nginx
 
-The `SECRET_KEY` variable in `mysite/settings.py` has been scrubbed, and instructions for regenerating the key are available in the accompanying DigitalOcean [tutorial](https://www.digitalocean.com/community/tutorials).
+2. Next, use Docker to build and deploy this same app on your local
 
-This app is meant to be used as a reference Django app for several DigitalOcean tutorials, and should not be deployed in production.
+3. Outline the steps needed to deploy this app on an AWS EC2 instance.
+	- Login and Signup to AWS Services and choose EC2
+	- Connect to EC2 from Local
+	- Setup local EC2 instance by configuring dependencies
+	- Clone the Django Repository and create a virtual environment
+	- Install Django dependencies
+	- Configure Apache Server
 
-----
+4. That same app is showing 500 errors, what will you do to find the root cause of the issue?
+	- To find the root cause, I would look first into the error shown in the Browser. If that doesn't show any helpful information, I would go into the error logs of the application.
 
-### Quickstart
+5. What will you do to fix that same issue immediately?
+	- I would look into the file and line and check for errors in syntax and spellings.
 
-Polls is a simple Django app to conduct Web-based polls. For each question, visitors can choose between a fixed number of answers.
-
-
-1. Add `polls` to your `INSTALLED_APPS` setting like this:
-
-```python
-INSTALLED_APPS = [
-        ...
-        'polls',
-    ]
-```
-
-2. Include the polls URLconf in your project `urls.py` like this:
-
-```python
-path('polls/', include('polls.urls')),
-```
-
-3. Run `python manage.py migrate` to create the polls models.
-
-4. Start the development server and visit http://127.0.0.1:8000/admin/
-   to create a poll (you'll need the Admin app enabled).
-
-5. Visit http://127.0.0.1:8000/polls/ to participate in the poll.
+6. What will you do to prevent the issue in the future?
+	- To prevent future issues, I would try to run the code with several test cases to check if it passes common human errors.
