@@ -1,5 +1,11 @@
 # Django Tutorial Polls App - Take-home Task
 
+## To run django-polls in Docker
+1. Have Docker installed
+2. Clone Repository]
+3. Go to the directory and run CMD
+4. Run docker-compose -d
+
 ## Infrastructure Tasks
 1. In your local machine, deploy this Django app on Nginx
 
