@@ -3,13 +3,21 @@ version: "3.3"
 services:
   db:
     image: nouchka/sqlite3:latest
+    container_name: db
     volumes:
-      - ./db:/app/db
-    environment:
-      - SQLITE3_DB=db.sqlite3
-  web: 
-    build: .
+      - . db:/app
+    stdin_open: true
+    tty: true
     ports:
-      - 8000:8000
-    volumes:
-      - .:/app
+      - '9000:9000'
+  web: 
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    command: python manage.py runserver 0.0.0.0:8000
+    container_name: web
+    restart: unless-stopped
+    ports:
+      - '8000:8000'
+    depends_on:
+      - db
